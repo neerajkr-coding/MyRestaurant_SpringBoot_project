@@ -29,9 +29,4 @@ public class IndochineserestroApplication {
 		return builder.build();
 	}
 
-	public static void main(String[] args) {
-		SpringApplication.run(IndochineserestroApplication.class, args);
-	}
-
-
 }
