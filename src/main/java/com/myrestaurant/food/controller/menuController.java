@@ -3,9 +3,7 @@ package com.myrestaurant.food.controller;
 import com.myrestaurant.food.model.Food;
 import com.myrestaurant.food.repository.FoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,8 +19,13 @@ public class menuController {
     }
 
     @GetMapping("/items")
-    public List<Food> getAllFood() {
+    public List<Food> getAllItem() {
         return foodRepository.findAll();
+    }
+
+    @PostMapping("/additem")
+    public Food addItem(@RequestBody Food food){
+        return foodRepository.save(food);
     }
 
 }
